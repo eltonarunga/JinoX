@@ -63,7 +63,6 @@ export default function App() {
         <div className="section-label">
           <span className="section-num">01</span>
           <div className="section-rule"></div>
-          <span className="section-icon">⬛</span>
         </div>
 
         <h2>Executive Summary</h2>
@@ -88,7 +87,6 @@ export default function App() {
         <div className="section-label">
           <span className="section-num">02</span>
           <div className="section-rule"></div>
-          <span className="section-icon">⬛</span>
         </div>
 
         <h2>The Problem</h2>
@@ -156,7 +154,6 @@ export default function App() {
         <div className="section-label">
           <span className="section-num">03</span>
           <div className="section-rule"></div>
-          <span className="section-icon">⬛</span>
         </div>
 
         <h2>Solution Architecture — Six Integrated Layers</h2>
@@ -167,37 +164,31 @@ export default function App() {
 
         <div className="layers">
           <div className="layer-card" data-num="1">
-            <div className="layer-icon-box">🗄️</div>
             <div className="layer-title">Pan-African Multimodal Dataset</div>
             <p className="layer-desc">Dental X-rays, intraoral images, clinical records, environmental data (fluoride, water quality, climate zone), and genomic markers collected across Kenyan counties and partner African institutions.</p>
             <div className="layer-outcome">→ Largest open oral health dataset in the Global South</div>
           </div>
           <div className="layer-card" data-num="2">
-            <div className="layer-icon-box">🤖</div>
             <div className="layer-title">Foundational AI Model</div>
             <p className="layer-desc">A multimodal foundation model trained simultaneously on imaging, structured clinical data, environmental signals, and genetic markers — the first of its kind for oral health.</p>
             <div className="layer-outcome">→ Diagnosis · Risk prediction · Treatment recommendation</div>
           </div>
           <div className="layer-card" data-num="3">
-            <div className="layer-icon-box">🧠</div>
             <div className="layer-title">Digital Twin Simulation Engine</div>
             <p className="layer-desc">Virtual models of oral cavity biology: tooth structure, gingival tissue, oral microbiome, and biochemical environment. Enables disease progression modeling and treatment simulation without patient risk.</p>
             <div className="layer-outcome">→ Hypothesis testing · Pre-clinical simulation</div>
           </div>
           <div className="layer-card" data-num="4">
-            <div className="layer-icon-box">🧬</div>
             <div className="layer-title">Genetic Risk Prediction</div>
             <p className="layer-desc">AI-driven genomic analysis to identify susceptibility variants for dental caries, periodontal disease, fluorosis, and developmental anomalies — driving personalized prevention in Kenya's diverse ethnic populations.</p>
             <div className="layer-outcome">→ Precision oral health for African genomes</div>
           </div>
           <div className="layer-card" data-num="5">
-            <div className="layer-icon-box">📱</div>
             <div className="layer-title">Low-Resource AI Diagnostics</div>
             <p className="layer-desc">On-device and low-bandwidth diagnostic tools deployable via smartphone cameras, designed for Community Health Promoters (CHPs), rural dispensaries, and mission hospitals across Kenya's 47 counties.</p>
             <div className="layer-outcome">→ Reaches the last mile of oral health access</div>
           </div>
           <div className="layer-card" data-num="6">
-            <div className="layer-icon-box">🌍</div>
             <div className="layer-title">Climate–Health Intelligence</div>
             <p className="layer-desc">Integration of water quality (fluoride concentration), climate pattern data, and agricultural land use to model regional oral disease risk — connecting environmental science to clinical predictions at county level.</p>
             <div className="layer-outcome">→ Predictive disease mapping for public health planning</div>
@@ -241,7 +232,6 @@ export default function App() {
         <div className="section-label">
           <span className="section-num">04</span>
           <div className="section-rule"></div>
-          <span className="section-icon">⬛</span>
         </div>
 
         <h2>Scientific &amp; Technical Innovation</h2>
@@ -269,7 +259,6 @@ export default function App() {
         <div className="section-label">
           <span className="section-num">05</span>
           <div className="section-rule"></div>
-          <span className="section-icon">⬛</span>
         </div>
 
         <h2>Expected Impact</h2>
@@ -333,7 +322,6 @@ export default function App() {
         <div className="section-label">
           <span className="section-num">06</span>
           <div className="section-rule"></div>
-          <span className="section-icon">⬛</span>
         </div>
 
         <h2>Implementation Roadmap — 24 Months</h2>
@@ -389,7 +377,6 @@ export default function App() {
         <div className="section-label">
           <span className="section-num">07</span>
           <div className="section-rule"></div>
-          <span className="section-icon">⬛</span>
         </div>
 
         <h2>Budget Overview — $2M (24 Months)</h2>
@@ -435,29 +422,24 @@ export default function App() {
         <div className="section-label">
           <span className="section-num">08</span>
           <div className="section-rule"></div>
-          <span className="section-icon">⬛</span>
         </div>
 
         <h2>Alignment with Google.org Criteria</h2>
 
         <div className="align-grid">
           <div className="align-card">
-            <div className="align-check">🔬</div>
             <div className="align-title">Scientific Ambition &amp; Impact</div>
             <p className="align-desc">JinoX pursues genuinely high-stakes research: the first African oral health foundational model, the first climate-oral disease correlation dataset, and the first oral digital twin. Each is a publishable, citable scientific contribution. Success metrics are quantifiable: dataset size, model AUC, publication count, patient reach.</p>
           </div>
           <div className="align-card">
-            <div className="align-check">🤖</div>
             <div className="align-title">Innovative &amp; Responsible AI</div>
             <p className="align-desc">AI is the core scientific instrument, not a wrapper. The platform is fully open-source (Apache 2.0 licensed), compliant with Google's Responsible AI Principles, and designed to create a foundational open dataset — directly enabling future AI use cases by researchers globally. Bias mitigation is built into data collection protocol design.</p>
           </div>
           <div className="align-card">
-            <div className="align-check">⚙️</div>
             <div className="align-title">Feasibility</div>
             <p className="align-desc">The team brings clinical expertise (dental surgery, CAD/CAM digital dentistry research), AI/ML engineering, and established relationships with Kenyan clinical institutions. The 24-month roadmap is phased and milestone-gated. Budget is grounded in actual Kenya data-collection costs (CHP training, equipment, IRB compliance).</p>
           </div>
           <div className="align-card">
-            <div className="align-check">🌍</div>
             <div className="align-title">Scalability &amp; Sustainability</div>
             <p className="align-desc">The open Research API enables global researcher adoption beyond the grant period. The flywheel model (deployment → new data → better models) is self-sustaining scientifically. Sustainability pathways include academic licensing, NHIF integration, and expansion to East African partners who contribute data and share infrastructure costs.</p>
           </div>
@@ -467,7 +449,6 @@ export default function App() {
         <div className="section-label">
           <span className="section-num">09</span>
           <div className="section-rule"></div>
-          <span className="section-icon">⬛</span>
         </div>
 
         <h2>Responsible AI &amp; Ethics Framework</h2>
