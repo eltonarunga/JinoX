@@ -59,13 +59,29 @@ export default function App() {
       {/* ====== DOCUMENT BODY ====== */}
       <div className="doc">
 
+        {/* ========== TABLE OF CONTENTS ========== */}
+        <div className="toc">
+          <h2>Table of Contents</h2>
+          <ul className="toc-list">
+            <li><a href="#executive-summary"><span className="toc-num">01</span> Executive Summary</a></li>
+            <li><a href="#problem"><span className="toc-num">02</span> The Problem</a></li>
+            <li><a href="#solution"><span className="toc-num">03</span> Solution Architecture</a></li>
+            <li><a href="#innovation"><span className="toc-num">04</span> Scientific &amp; Technical Innovation</a></li>
+            <li><a href="#impact"><span className="toc-num">05</span> Expected Impact</a></li>
+            <li><a href="#roadmap"><span className="toc-num">06</span> Implementation Roadmap</a></li>
+            <li><a href="#budget"><span className="toc-num">07</span> Budget Overview</a></li>
+            <li><a href="#alignment"><span className="toc-num">08</span> Alignment with Google.org Criteria</a></li>
+            <li><a href="#ethics"><span className="toc-num">09</span> Responsible AI &amp; Ethics Framework</a></li>
+          </ul>
+        </div>
+
         {/* ========== SECTION 1: EXECUTIVE SUMMARY ========== */}
         <div className="section-label">
           <span className="section-num">01</span>
           <div className="section-rule"></div>
         </div>
 
-        <h2>Executive Summary</h2>
+        <h2 id="executive-summary">Executive Summary</h2>
 
         <p>
           JinoX AI is an open, multimodal artificial intelligence platform designed to accelerate scientific discovery and measurably improve oral health outcomes — beginning in Kenya and scaling across Africa and the Global South.
@@ -89,7 +105,7 @@ export default function App() {
           <div className="section-rule"></div>
         </div>
 
-        <h2>The Problem</h2>
+        <h2 id="problem">The Problem</h2>
 
         <div className="problem-grid">
           <div className="problem-cell">
@@ -129,7 +145,7 @@ export default function App() {
           <div className="kenya-box-label">Kenya Context — Why Here, Why Now</div>
           <div className="kenya-box-title">The ideal proving ground for Africa-first AI science</div>
           <p>
-            Kenya hosts a robust digital health infrastructure (M-Pesa interoperability, NHIF digitization, active telemedicine ecosystem), a growing cadre of clinical AI researchers at institutions including the University of Nairobi, Kenyatta National Hospital, and Aga Khan University Hospital, and an oral health burden that spans all three of Google.org's scientific interest areas: genomics (genetic susceptibility to caries and fluorosis), climate (fluoride-water-diet nexus), and life sciences (oral microbiome dynamics in Sub-Saharan populations).
+            Kenya hosts a robust digital health infrastructure (M-Pesa interoperability, SHA/SHIF digitization, active telemedicine ecosystem), a growing cadre of clinical AI researchers at institutions including the University of Nairobi, Kenyatta National Hospital, and Aga Khan University Hospital, and an oral health burden that spans all three of Google.org's scientific interest areas: genomics (genetic susceptibility to caries and fluorosis), climate (fluoride-water-diet nexus), and life sciences (oral microbiome dynamics in Sub-Saharan populations).
           </p>
           <p>
             JinoX will anchor its initial dataset collection and clinical deployment network in Kenya before expanding to East Africa and the broader continent — creating an open infrastructure that future researchers can build upon.
@@ -156,7 +172,7 @@ export default function App() {
           <div className="section-rule"></div>
         </div>
 
-        <h2>Solution Architecture — Six Integrated Layers</h2>
+        <h2 id="solution">Solution Architecture — Six Integrated Layers</h2>
 
         <p>
           JinoX AI is not a single model or application. It is a <strong>self-improving scientific system</strong> composed of six interdependent layers — each generating outputs that feed the next, creating compounding scientific value over time.
@@ -234,7 +250,7 @@ export default function App() {
           <div className="section-rule"></div>
         </div>
 
-        <h2>Scientific &amp; Technical Innovation</h2>
+        <h2 id="innovation">Scientific &amp; Technical Innovation</h2>
 
         <h3>AI Innovation</h3>
         <p>
@@ -261,9 +277,10 @@ export default function App() {
           <div className="section-rule"></div>
         </div>
 
-        <h2>Expected Impact</h2>
+        <h2 id="impact">Expected Impact</h2>
 
-        <table className="metrics">
+        <div className="metrics-wrapper">
+          <table className="metrics">
           <thead>
             <tr>
               <th>Domain</th>
@@ -317,6 +334,7 @@ export default function App() {
             </tr>
           </tbody>
         </table>
+        </div>
 
         {/* ========== SECTION 6: ROADMAP ========== */}
         <div className="section-label">
@@ -324,7 +342,7 @@ export default function App() {
           <div className="section-rule"></div>
         </div>
 
-        <h2>Implementation Roadmap — 24 Months</h2>
+        <h2 id="roadmap">Implementation Roadmap — 24 Months</h2>
 
         <div className="roadmap">
           <div className="phase-card">
@@ -368,7 +386,7 @@ export default function App() {
               <li>Open Research API launch for global access</li>
               <li>East Africa expansion: Uganda, Tanzania</li>
               <li>50+ facilities, 100k+ patients reached</li>
-              <li>Sustainability model: academic licensing + NHIF integration pathway</li>
+              <li>Sustainability model: academic licensing + SHA/SHIF integration pathway</li>
             </ul>
           </div>
         </div>
@@ -379,7 +397,7 @@ export default function App() {
           <div className="section-rule"></div>
         </div>
 
-        <h2>Budget Overview — $2M (24 Months)</h2>
+        <h2 id="budget">Budget Overview — $2M (24 Months)</h2>
 
         <div className="budget-bars">
           <div className="budget-row">
@@ -424,7 +442,7 @@ export default function App() {
           <div className="section-rule"></div>
         </div>
 
-        <h2>Alignment with Google.org Criteria</h2>
+        <h2 id="alignment">Alignment with Google.org Criteria</h2>
 
         <div className="align-grid">
           <div className="align-card">
@@ -441,7 +459,7 @@ export default function App() {
           </div>
           <div className="align-card">
             <div className="align-title">Scalability &amp; Sustainability</div>
-            <p className="align-desc">The open Research API enables global researcher adoption beyond the grant period. The flywheel model (deployment → new data → better models) is self-sustaining scientifically. Sustainability pathways include academic licensing, NHIF integration, and expansion to East African partners who contribute data and share infrastructure costs.</p>
+            <p className="align-desc">The open Research API enables global researcher adoption beyond the grant period. The flywheel model (deployment → new data → better models) is self-sustaining scientifically. Sustainability pathways include academic licensing, SHA/SHIF integration, and expansion to East African partners who contribute data and share infrastructure costs.</p>
           </div>
         </div>
 
@@ -451,7 +469,7 @@ export default function App() {
           <div className="section-rule"></div>
         </div>
 
-        <h2>Responsible AI &amp; Ethics Framework</h2>
+        <h2 id="ethics">Responsible AI &amp; Ethics Framework</h2>
 
         <h3>Data Ethics</h3>
         <p>
@@ -480,7 +498,7 @@ export default function App() {
             "JinoX AI becomes the global intelligence layer for oral and craniofacial science — built in Africa, open to the world."
           </div>
           <p className="vision-subtitle">
-            Future expansions include regenerative dentistry simulation, biomaterials discovery, integration with Kenya's broader digital health stack (SHA, formerly NHIF), and cross-disciplinary linkage with microbiome and systemic disease research — positioning oral health as a window into whole-body health intelligence.
+            Future expansions include regenerative dentistry simulation, biomaterials discovery, integration with Kenya's broader digital health stack (SHA/SHIF), and cross-disciplinary linkage with microbiome and systemic disease research — positioning oral health as a window into whole-body health intelligence.
           </p>
         </div>
 
