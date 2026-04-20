@@ -10,7 +10,7 @@ export default function App() {
 
         <div className="cover-top">
           <div className="cover-badge">Google.org Impact Challenge: AI for Science</div>
-          <div className="cover-meta">Proposal · 2025 · Kenya</div>
+          <div className="cover-meta">Proposal · 2026 · Kenya</div>
         </div>
 
         <div className="cover-body">
@@ -510,7 +510,7 @@ export default function App() {
         <div className="footer-meta">
           Google.org Impact Challenge: AI for Science<br />
           AI for Health &amp; Life Sciences · AI for Climate Resilience<br />
-          Kenya · Open-Source · 2025
+          Kenya · Open-Source · 2026
         </div>
       </div>
     </>
