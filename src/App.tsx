@@ -30,6 +30,13 @@ export default function App() {
             <span className="cover-tag">Climate–Health Intelligence</span>
           </div>
 
+          <div className="cover-actions">
+            <a href="https://medium.com/@earunga/africa-has-3-5-billion-reasons-to-build-a-new-kind-of-ai-we-started-with-your-teeth-7cd3cff867e4" target="_blank" rel="noopener noreferrer" className="read-article-btn">
+              Read the Vision on Medium
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            </a>
+          </div>
+
           <div className="cover-stat-row">
             <div className="cover-stat">
               <div className="cover-stat-num">3.5B</div>

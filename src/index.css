@@ -190,6 +190,32 @@ body {
   background: rgba(255,255,255,0.08);
 }
 
+.cover-actions {
+  margin-bottom: 52px;
+}
+
+.read-article-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.read-article-btn:hover {
+  background: transparent;
+  color: var(--paper);
+  border-color: rgba(255,255,255,0.4);
+}
+
 .cover-stat-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
