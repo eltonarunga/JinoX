@@ -18,7 +18,7 @@ export default function App() {
           <h1 className="cover-title">JinoX <em>AI</em></h1>
           <p className="cover-subtitle">
             A Multimodal Platform for Oral &amp; Craniofacial Discovery,<br />
-            Simulation, and Precision Health — Beginning in Kenya
+            Simulation, and Precision Health: Beginning in Kenya
           </p>
 
           <div className="cover-tags">
@@ -91,7 +91,7 @@ export default function App() {
         <h2 id="executive-summary">Executive Summary</h2>
 
         <p>
-          JinoX AI is an open, multimodal artificial intelligence platform designed to accelerate scientific discovery and measurably improve oral health outcomes — beginning in Kenya and scaling across Africa and the Global South.
+          JinoX AI is an open, multimodal artificial intelligence platform designed to accelerate scientific discovery and measurably improve oral health outcomes, beginning in Kenya and scaling across Africa and the Global South.
         </p>
 
         <div className="callout">
@@ -99,7 +99,7 @@ export default function App() {
         </div>
 
         <p>
-          The platform integrates large-scale real-world multimodal datasets, foundational AI models trained on African clinical data, biological simulation via digital twins, and low-resource clinical deployment tools — forming a self-improving scientific and clinical intelligence system.
+          The platform integrates large-scale real-world multimodal datasets, foundational AI models trained on African clinical data, biological simulation via digital twins, and low-resource clinical deployment tools to form a self-improving scientific and clinical intelligence system.
         </p>
 
         <p>
@@ -118,7 +118,7 @@ export default function App() {
           <div className="problem-cell">
             <div className="problem-cell-title">Global Scale</div>
             <div className="problem-stat">3.5B</div>
-            <div className="problem-desc">People affected by oral diseases — the most prevalent non-communicable disease cluster globally, yet one of the least AI-resourced research domains.</div>
+            <div className="problem-desc">People affected by oral diseases, representing the most prevalent non-communicable disease cluster globally, yet remaining one of the least AI-resourced research domains.</div>
           </div>
           <div className="problem-cell">
             <div className="problem-cell-title">Research Gap</div>
@@ -128,19 +128,19 @@ export default function App() {
           <div className="problem-cell">
             <div className="problem-cell-title">Kenya Dentist Ratio</div>
             <div className="problem-stat">1:50k</div>
-            <div className="problem-desc">One dentist per 50,000 people in Kenya vs. 1:1,500 globally recommended. AI-powered diagnostic tools are not a convenience — they are a necessity.</div>
+            <div className="problem-desc">One dentist per 50,000 people in Kenya vs. 1:1,500 globally recommended. AI-powered diagnostic tools are not a convenience; they are a necessity.</div>
           </div>
           <div className="problem-cell">
             <div className="problem-cell-title">Dataset Inequality</div>
             <div className="problem-stat">&lt;2%</div>
-            <div className="problem-desc">Estimated proportion of global medical imaging datasets from Sub-Saharan Africa — creating systematic AI bias in any model applied to this population.</div>
+            <div className="problem-desc">Estimated proportion of global medical imaging datasets from Sub-Saharan Africa, creating systematic AI bias in any model applied to this population.</div>
           </div>
         </div>
 
         <h3>The Core Research Gap</h3>
 
         <p>
-          There is no unified, AI-powered infrastructure for oral health research, prediction, and clinical deployment — particularly in low-resource settings. Existing tools are fragmented, proprietary, Western-centric, and disconnected from environmental or genomic context. This is not a marginal problem: the consequences include delayed diagnoses, preventable tooth loss, oral cancer missed at early stages, and systemic underinvestment in a disease burden that disproportionately affects the poorest populations.
+          There is no unified, AI-powered infrastructure for oral health research, prediction, and clinical deployment, particularly in low-resource settings. Existing tools are fragmented, proprietary, Western-centric, and disconnected from environmental or genomic context. This is not a marginal problem: the consequences include delayed diagnoses, preventable tooth loss, oral cancer missed at early stages, and systemic underinvestment in a disease burden that disproportionately affects the poorest populations.
         </p>
 
         <p>
@@ -149,26 +149,26 @@ export default function App() {
 
         {/* ========== KENYA CONTEXT ========== */}
         <div className="kenya-box">
-          <div className="kenya-box-label">Kenya Context — Why Here, Why Now</div>
+          <div className="kenya-box-label">Kenya Context: Why Here, Why Now</div>
           <div className="kenya-box-title">The ideal proving ground for Africa-first AI science</div>
           <p>
             Kenya hosts a robust digital health infrastructure (M-Pesa interoperability, SHA/SHIF digitization, active telemedicine ecosystem), a growing cadre of clinical AI researchers at institutions including the University of Nairobi, Kenyatta National Hospital, and Aga Khan University Hospital, and an oral health burden that spans all three of Google.org's scientific interest areas: genomics (genetic susceptibility to caries and fluorosis), climate (fluoride-water-diet nexus), and life sciences (oral microbiome dynamics in Sub-Saharan populations).
           </p>
           <p>
-            JinoX will anchor its initial dataset collection and clinical deployment network in Kenya before expanding to East Africa and the broader continent — creating an open infrastructure that future researchers can build upon.
+            JinoX will anchor its initial dataset collection and clinical deployment network in Kenya before expanding to East Africa and the broader continent to create an open infrastructure that future researchers can build upon.
           </p>
           <div className="kenya-facts">
             <div>
               <div className="kenya-fact-num">54M</div>
-              <div className="kenya-fact-label">Kenya population — large, diverse, understudied</div>
+              <div className="kenya-fact-label">Kenya population: large, diverse, and understudied</div>
             </div>
             <div>
               <div className="kenya-fact-num">47</div>
-              <div className="kenya-fact-label">Counties — geographic &amp; environmental diversity for dataset breadth</div>
+              <div className="kenya-fact-label">Counties: geographic and environmental diversity for dataset breadth</div>
             </div>
             <div>
               <div className="kenya-fact-num">High</div>
-              <div className="kenya-fact-label">Endemic fluorosis risk in Rift Valley — unique research signal</div>
+              <div className="kenya-fact-label">Endemic fluorosis risk in Rift Valley, presenting a unique research signal</div>
             </div>
           </div>
         </div>
@@ -179,10 +179,10 @@ export default function App() {
           <div className="section-rule"></div>
         </div>
 
-        <h2 id="solution">Solution Architecture — Six Integrated Layers</h2>
+        <h2 id="solution">Solution Architecture: Six Integrated Layers</h2>
 
         <p>
-          JinoX AI is not a single model or application. It is a <strong>self-improving scientific system</strong> composed of six interdependent layers — each generating outputs that feed the next, creating compounding scientific value over time.
+          JinoX AI is not a single model or application. It is a <strong>self-improving scientific system</strong> composed of six interdependent layers, where each generates outputs that feed the next, creating compounding scientific value over time.
         </p>
 
         <div className="layers">
@@ -193,7 +193,7 @@ export default function App() {
           </div>
           <div className="layer-card" data-num="2">
             <div className="layer-title">Foundational AI Model</div>
-            <p className="layer-desc">A multimodal foundation model trained simultaneously on imaging, structured clinical data, environmental signals, and genetic markers — the first of its kind for oral health.</p>
+            <p className="layer-desc">A multimodal foundation model trained simultaneously on imaging, structured clinical data, environmental signals, and genetic markers, representing the first of its kind for oral health.</p>
             <div className="layer-outcome">→ Diagnosis · Risk prediction · Treatment recommendation</div>
           </div>
           <div className="layer-card" data-num="3">
@@ -203,7 +203,7 @@ export default function App() {
           </div>
           <div className="layer-card" data-num="4">
             <div className="layer-title">Genetic Risk Prediction</div>
-            <p className="layer-desc">AI-driven genomic analysis to identify susceptibility variants for dental caries, periodontal disease, fluorosis, and developmental anomalies — driving personalized prevention in Kenya's diverse ethnic populations.</p>
+            <p className="layer-desc">AI-driven genomic analysis to identify susceptibility variants for dental caries, periodontal disease, fluorosis, and developmental anomalies to drive personalized prevention in Kenya's diverse ethnic populations.</p>
             <div className="layer-outcome">→ Precision oral health for African genomes</div>
           </div>
           <div className="layer-card" data-num="5">
@@ -213,7 +213,7 @@ export default function App() {
           </div>
           <div className="layer-card" data-num="6">
             <div className="layer-title">Climate–Health Intelligence</div>
-            <p className="layer-desc">Integration of water quality (fluoride concentration), climate pattern data, and agricultural land use to model regional oral disease risk — connecting environmental science to clinical predictions at county level.</p>
+            <p className="layer-desc">Integration of water quality (fluoride concentration), climate pattern data, and agricultural land use to model regional oral disease risk, connecting environmental science to clinical predictions at the county level.</p>
             <div className="layer-outcome">→ Predictive disease mapping for public health planning</div>
           </div>
         </div>
@@ -247,7 +247,7 @@ export default function App() {
             </div>
           </div>
           <p className="flywheel-desc">
-            Each deployment generates new annotated clinical data. That data retrains the model. The simulation engine becomes more accurate. Predictions improve. This is a compounding scientific asset — not a one-time project.
+            Each deployment generates new annotated clinical data. That data retrains the model. The simulation engine becomes more accurate. Predictions improve. This is a compounding scientific asset rather than a one-time project.
           </p>
         </div>
 
@@ -261,12 +261,12 @@ export default function App() {
 
         <h3>AI Innovation</h3>
         <p>
-          JinoX will train the world's first multimodal foundation model for oral health — a model that simultaneously processes radiographic imaging, structured clinical data, genomic sequences, and environmental signals. Existing oral health AI models are narrow, single-modality, and trained almost entirely on Western clinical datasets. JinoX will be trained on African patient data from the start, making it the only model that reflects the biological and environmental context of the continent's 1.4 billion people.
+          JinoX will train the world's first multimodal foundation model for oral health. This model will simultaneously process radiographic imaging, structured clinical data, genomic sequences, and environmental signals. Existing oral health AI models are narrow, single-modality, and trained almost entirely on Western clinical datasets. JinoX will be trained on African patient data from the start, making it the only model that reflects the biological and environmental context of the continent's 1.4 billion people.
         </p>
 
         <h3>Biological Science</h3>
         <p>
-          The digital twin simulation engine will create, for the first time, a computationally tractable virtual model of the oral cavity as a biological system — integrating tooth morphology, periodontal dynamics, salivary chemistry, and microbiome composition. This enables in-silico hypothesis testing that would otherwise require expensive or infeasible longitudinal clinical studies. Novel hypotheses about fluorosis pathways, caries progression under high-starch diets (prevalent in Kenya), and the role of the oral microbiome in systemic disease can be tested computationally before clinical validation.
+          The digital twin simulation engine will create, for the first time, a computationally tractable virtual model of the oral cavity as a biological system, integrating tooth morphology, periodontal dynamics, salivary chemistry, and microbiome composition. This enables in-silico hypothesis testing that would otherwise require expensive or infeasible longitudinal clinical studies. Novel hypotheses about fluorosis pathways, caries progression under high-starch diets (prevalent in Kenya), and the role of the oral microbiome in systemic disease can be tested computationally before clinical validation.
         </p>
 
         <h3>Data Science &amp; Environmental Health</h3>
@@ -275,7 +275,7 @@ export default function App() {
         </p>
 
         <div className="callout callout-green">
-          "JinoX does not apply existing AI to oral health. It builds the scientific infrastructure — the datasets, models, and simulation tools — that the field currently lacks entirely."
+          "JinoX does not apply existing AI to oral health. It builds the scientific infrastructure (such as the datasets, models, and simulation tools) that the field currently lacks entirely."
         </div>
 
         {/* ========== SECTION 5: IMPACT ========== */}
@@ -349,7 +349,7 @@ export default function App() {
           <div className="section-rule"></div>
         </div>
 
-        <h2 id="roadmap">Implementation Roadmap — 24 Months</h2>
+        <h2 id="roadmap">Implementation Roadmap: 24 Months</h2>
 
         <div className="roadmap">
           <div className="phase-card">
@@ -357,7 +357,7 @@ export default function App() {
             <div className="phase-name">Foundation</div>
             <ul className="phase-items">
               <li>Establish clinical partnerships: KNH, UoN Dental School, Aga Khan, county hospitals</li>
-              <li>IRB ethics approval — Kenya and institutional</li>
+              <li>IRB ethics approval (Kenya and institutional)</li>
               <li>Data collection protocol design and CHP training</li>
               <li>Baseline dataset: 10,000 annotated records</li>
               <li>Prototype classification models (caries, periodontitis)</li>
@@ -404,7 +404,7 @@ export default function App() {
           <div className="section-rule"></div>
         </div>
 
-        <h2 id="budget">Budget Overview — $2M (24 Months)</h2>
+        <h2 id="budget">Budget Overview: $2M (24 Months)</h2>
 
         <div className="budget-bars">
           <div className="budget-row">
@@ -440,7 +440,7 @@ export default function App() {
         </div>
 
         <p style={{ fontSize: '13px', color: 'var(--muted)', marginTop: '8px' }}>
-          The highest allocation to data collection reflects the primacy of building genuine African clinical data infrastructure — the foundational scientific contribution from which all other components derive their validity. Cloud infrastructure costs assume Google Cloud partnership and credit support.
+          The highest allocation to data collection reflects the primacy of building genuine African clinical data infrastructure, which is the foundational scientific contribution from which all other components derive their validity. Cloud infrastructure costs assume Google Cloud partnership and credit support.
         </p>
 
         {/* ========== SECTION 8: GOOGLE.ORG ALIGNMENT ========== */}
@@ -458,7 +458,7 @@ export default function App() {
           </div>
           <div className="align-card">
             <div className="align-title">Innovative &amp; Responsible AI</div>
-            <p className="align-desc">AI is the core scientific instrument, not a wrapper. The platform is fully open-source (Apache 2.0 licensed), compliant with Google's Responsible AI Principles, and designed to create a foundational open dataset — directly enabling future AI use cases by researchers globally. Bias mitigation is built into data collection protocol design.</p>
+            <p className="align-desc">AI is the core scientific instrument, not a wrapper. The platform is fully open-source (Apache 2.0 licensed), compliant with Google's Responsible AI Principles, and designed to create a foundational open dataset, directly enabling future AI use cases by researchers globally. Bias mitigation is built into data collection protocol design.</p>
           </div>
           <div className="align-card">
             <div className="align-title">Feasibility</div>
@@ -490,22 +490,22 @@ export default function App() {
 
         <h3>Clinical Oversight</h3>
         <p>
-          JinoX diagnostic tools are designed as clinical decision support instruments — not autonomous diagnostic systems. Every AI output is presented as a probability score for clinician review. The system is designed in compliance with Kenya Medical Practitioners and Dentists Council (KMPDC) regulatory requirements.
+          JinoX diagnostic tools are designed as clinical decision support instruments rather than autonomous diagnostic systems. Every AI output is presented as a probability score for clinician review. The system is designed in compliance with Kenya Medical Practitioners and Dentists Council (KMPDC) regulatory requirements.
         </p>
 
         <h3>Open Access</h3>
         <p>
-          All models, code, and de-identified datasets will be released under open licenses. Scientific outputs will be submitted to open-access journals. The Research API will be free for academic and non-commercial use globally — maximising the scientific commons value of the grant.
+          All models, code, and de-identified datasets will be released under open licenses. Scientific outputs will be submitted to open-access journals. The Research API will be free for academic and non-commercial use globally to maximise the scientific commons value of the grant.
         </p>
 
         {/* ========== VISION ========== */}
         <div className="vision">
           <div className="vision-eyebrow">Long-Term Vision</div>
           <div className="vision-title">
-            "JinoX AI becomes the global intelligence layer for oral and craniofacial science — built in Africa, open to the world."
+            "JinoX AI becomes the global intelligence layer for oral and craniofacial science: built in Africa, open to the world."
           </div>
           <p className="vision-subtitle">
-            Future expansions include regenerative dentistry simulation, biomaterials discovery, integration with Kenya's broader digital health stack (SHA/SHIF), and cross-disciplinary linkage with microbiome and systemic disease research — positioning oral health as a window into whole-body health intelligence.
+            Future expansions include regenerative dentistry simulation, biomaterials discovery, integration with Kenya's broader digital health stack (SHA/SHIF), and cross-disciplinary linkage with microbiome and systemic disease research, positioning oral health as a window into whole-body health intelligence.
           </p>
         </div>
 

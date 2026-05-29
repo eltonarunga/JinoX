@@ -1,6 +1,6 @@
 # JinoX AI
 
-**A Multimodal Platform for Oral & Craniofacial Discovery, Simulation, and Precision Health — Beginning in Kenya**
+**A Multimodal Platform for Oral & Craniofacial Discovery, Simulation, and Precision Health: Beginning in Kenya**
 
 JinoX AI is an open, multimodal artificial intelligence platform designed to accelerate scientific discovery and measurably improve oral health outcomes. It begins its implementation in Kenya, with a vision to scale across East Africa and the broader Global South. 
 
@@ -10,7 +10,7 @@ The platform integrates large-scale real-world multimodal datasets, foundational
 
 This repository contains the interactive digital proposal and project overview for JinoX AI, detailing its structural alignment with the **Google.org AI for Science Open Call**. 
 
-### 🧬 Solution Architecture — Six Integrated Layers
+### 🧬 Solution Architecture: Six Integrated Layers
 
 JinoX AI is constructed as a self-improving scientific system consisting of interdependent layers:
 
@@ -85,4 +85,4 @@ JinoX AI is deeply committed to ethical data practices and responsible AI deploy
 
 ---
 
-*JinoX AI becomes the global intelligence layer for oral and craniofacial science — built in Africa, open to the world.*
+*JinoX AI becomes the global intelligence layer for oral and craniofacial science: built in Africa, open to the world.*
