@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function App() {
   return (
     <>
@@ -27,7 +29,7 @@ export default function App() {
             <span className="cover-tag active">Digital Twin</span>
             <span className="cover-tag">Genomics</span>
             <span className="cover-tag">Low-Resource Deployment</span>
-            <span className="cover-tag">Climate–Health Intelligence</span>
+            <span className="cover-tag">Climate-Health Intelligence</span>
           </div>
 
           <div className="cover-actions">
@@ -75,10 +77,7 @@ export default function App() {
             <li><a href="#solution"><span className="toc-num">03</span> Solution Architecture</a></li>
             <li><a href="#innovation"><span className="toc-num">04</span> Scientific &amp; Technical Innovation</a></li>
             <li><a href="#impact"><span className="toc-num">05</span> Expected Impact</a></li>
-            <li><a href="#roadmap"><span className="toc-num">06</span> Implementation Roadmap</a></li>
-            <li><a href="#budget"><span className="toc-num">07</span> Budget Overview</a></li>
-            <li><a href="#alignment"><span className="toc-num">08</span> Alignment with Google.org Criteria</a></li>
-            <li><a href="#ethics"><span className="toc-num">09</span> Responsible AI &amp; Ethics Framework</a></li>
+            <li><a href="#ethics"><span className="toc-num">06</span> Responsible AI &amp; Ethics Framework</a></li>
           </ul>
         </div>
 
@@ -212,7 +211,7 @@ export default function App() {
             <div className="layer-outcome">→ Reaches the last mile of oral health access</div>
           </div>
           <div className="layer-card" data-num="6">
-            <div className="layer-title">Climate–Health Intelligence</div>
+            <div className="layer-title">Climate-Health Intelligence</div>
             <p className="layer-desc">Integration of water quality (fluoride concentration), climate pattern data, and agricultural land use to model regional oral disease risk, connecting environmental science to clinical predictions at the county level.</p>
             <div className="layer-outcome">→ Predictive disease mapping for public health planning</div>
           </div>
@@ -343,136 +342,9 @@ export default function App() {
         </table>
         </div>
 
-        {/* ========== SECTION 6: ROADMAP ========== */}
+        {/* ========== SECTION 6: RESPONSIBLE AI ========== */}
         <div className="section-label">
           <span className="section-num">06</span>
-          <div className="section-rule"></div>
-        </div>
-
-        <h2 id="roadmap">Implementation Roadmap: 24 Months</h2>
-
-        <div className="roadmap">
-          <div className="phase-card">
-            <div className="phase-period">Months 0–6</div>
-            <div className="phase-name">Foundation</div>
-            <ul className="phase-items">
-              <li>Establish clinical partnerships: KNH, UoN Dental School, Aga Khan, county hospitals</li>
-              <li>IRB ethics approval (Kenya and institutional)</li>
-              <li>Data collection protocol design and CHP training</li>
-              <li>Baseline dataset: 10,000 annotated records</li>
-              <li>Prototype classification models (caries, periodontitis)</li>
-            </ul>
-          </div>
-          <div className="phase-card">
-            <div className="phase-period">Months 6–12</div>
-            <div className="phase-name">Model Build</div>
-            <ul className="phase-items">
-              <li>Scale dataset to 30,000+ records across 10 counties</li>
-              <li>Train multimodal foundational model v1</li>
-              <li>Launch smartphone diagnostic tool beta</li>
-              <li>Begin fluoride-climate data integration</li>
-              <li>First 3 peer-reviewed submissions</li>
-            </ul>
-          </div>
-          <div className="phase-card">
-            <div className="phase-period">Months 12–18</div>
-            <div className="phase-name">Simulation</div>
-            <ul className="phase-items">
-              <li>Digital twin engine development and validation</li>
-              <li>Genomic risk prediction module launch</li>
-              <li>Rural facility deployment: 30+ sites</li>
-              <li>Climate-health risk maps: 15 counties</li>
-              <li>Open dataset v1 public release</li>
-            </ul>
-          </div>
-          <div className="phase-card">
-            <div className="phase-period">Months 18–24</div>
-            <div className="phase-name">Scale &amp; Open</div>
-            <ul className="phase-items">
-              <li>System optimization and model iteration</li>
-              <li>Open Research API launch for global access</li>
-              <li>East Africa expansion: Uganda, Tanzania</li>
-              <li>50+ facilities, 100k+ patients reached</li>
-              <li>Sustainability model: academic licensing + SHA/SHIF integration pathway</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* ========== SECTION 7: BUDGET ========== */}
-        <div className="section-label">
-          <span className="section-num">07</span>
-          <div className="section-rule"></div>
-        </div>
-
-        <h2 id="budget">Budget Overview: $2M (24 Months)</h2>
-
-        <div className="budget-bars">
-          <div className="budget-row">
-            <div className="budget-label">Data Collection &amp; Partnerships</div>
-            <div className="budget-track"><div className="budget-fill" style={{ width: '30%' }}></div></div>
-            <div className="budget-pct">30% · $600k</div>
-          </div>
-          <div className="budget-row">
-            <div className="budget-label">AI Model Development</div>
-            <div className="budget-track"><div className="budget-fill" style={{ width: '25%' }}></div></div>
-            <div className="budget-pct">25% · $500k</div>
-          </div>
-          <div className="budget-row">
-            <div className="budget-label">Digital Twin Simulation</div>
-            <div className="budget-track"><div className="budget-fill" style={{ width: '15%', background: 'var(--jade)' }}></div></div>
-            <div className="budget-pct">15% · $300k</div>
-          </div>
-          <div className="budget-row">
-            <div className="budget-label">Field Deployment &amp; Clinical Tools</div>
-            <div className="budget-track"><div className="budget-fill" style={{ width: '15%', background: 'var(--jade)' }}></div></div>
-            <div className="budget-pct">15% · $300k</div>
-          </div>
-          <div className="budget-row">
-            <div className="budget-label">Cloud Infrastructure (Google Cloud)</div>
-            <div className="budget-track"><div className="budget-fill" style={{ width: '10%', background: 'var(--gold)' }}></div></div>
-            <div className="budget-pct">10% · $200k</div>
-          </div>
-          <div className="budget-row">
-            <div className="budget-label">Operations &amp; Ethics Compliance</div>
-            <div className="budget-track"><div className="budget-fill" style={{ width: '5%', background: 'var(--muted)' }}></div></div>
-            <div className="budget-pct">5% · $100k</div>
-          </div>
-        </div>
-
-        <p style={{ fontSize: '13px', color: 'var(--muted)', marginTop: '8px' }}>
-          The highest allocation to data collection reflects the primacy of building genuine African clinical data infrastructure, which is the foundational scientific contribution from which all other components derive their validity. Cloud infrastructure costs assume Google Cloud partnership and credit support.
-        </p>
-
-        {/* ========== SECTION 8: GOOGLE.ORG ALIGNMENT ========== */}
-        <div className="section-label">
-          <span className="section-num">08</span>
-          <div className="section-rule"></div>
-        </div>
-
-        <h2 id="alignment">Alignment with Google.org Criteria</h2>
-
-        <div className="align-grid">
-          <div className="align-card">
-            <div className="align-title">Scientific Ambition &amp; Impact</div>
-            <p className="align-desc">JinoX pursues genuinely high-stakes research: the first African oral health foundational model, the first climate-oral disease correlation dataset, and the first oral digital twin. Each is a publishable, citable scientific contribution. Success metrics are quantifiable: dataset size, model AUC, publication count, patient reach.</p>
-          </div>
-          <div className="align-card">
-            <div className="align-title">Innovative &amp; Responsible AI</div>
-            <p className="align-desc">AI is the core scientific instrument, not a wrapper. The platform is fully open-source (Apache 2.0 licensed), compliant with Google's Responsible AI Principles, and designed to create a foundational open dataset, directly enabling future AI use cases by researchers globally. Bias mitigation is built into data collection protocol design.</p>
-          </div>
-          <div className="align-card">
-            <div className="align-title">Feasibility</div>
-            <p className="align-desc">The team brings clinical expertise (dental surgery, CAD/CAM digital dentistry research), AI/ML engineering, and established relationships with Kenyan clinical institutions. The 24-month roadmap is phased and milestone-gated. Budget is grounded in actual Kenya data-collection costs (CHP training, equipment, IRB compliance).</p>
-          </div>
-          <div className="align-card">
-            <div className="align-title">Scalability &amp; Sustainability</div>
-            <p className="align-desc">The open Research API enables global researcher adoption beyond the grant period. The flywheel model (deployment → new data → better models) is self-sustaining scientifically. Sustainability pathways include academic licensing, SHA/SHIF integration, and expansion to East African partners who contribute data and share infrastructure costs.</p>
-          </div>
-        </div>
-
-        {/* ========== SECTION 9: RESPONSIBLE AI ========== */}
-        <div className="section-label">
-          <span className="section-num">09</span>
           <div className="section-rule"></div>
         </div>
 
