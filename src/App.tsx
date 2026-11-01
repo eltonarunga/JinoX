@@ -1,8 +1,99 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import {
+  ExternalLink,
+  Share2,
+  Check,
+  ChevronUp,
+  Sparkles,
+  ShieldCheck,
+  Smartphone,
+  Globe,
+  Database
+} from "lucide-react";
 
 export default function App() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showStickyNav, setShowStickyNav] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalScroll > 0) {
+        const currentProgress = (window.scrollY / totalScroll) * 100;
+        setScrollProgress(currentProgress);
+      }
+      setShowStickyNav(window.scrollY > 380);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    } catch {
+      // Fallback
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
+      {/* ====== READING PROGRESS BAR ====== */}
+      <div className="reading-progress-track" aria-hidden="true">
+        <div
+          className="reading-progress-bar"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+
+      {/* ====== STICKY TOP NAV BAR ====== */}
+      <header className={`sticky-nav ${showStickyNav ? "visible" : ""}`} role="banner">
+        <div className="nav-brand-group">
+          <a href="#" className="nav-brand-logo" onClick={scrollToTop}>
+            <span className="nav-brand-name">JinoX AI</span>
+          </a>
+          <span className="nav-badge-pill">Kenya · Google.org</span>
+        </div>
+
+        <nav className="nav-links" aria-label="Quick Section Navigation">
+          <a href="#executive-summary" className="nav-link">Summary</a>
+          <a href="#problem" className="nav-link">Problem</a>
+          <a href="#solution" className="nav-link">Architecture</a>
+          <a href="#mvp" className="nav-link">Live MVP</a>
+          <a href="#innovation" className="nav-link">Innovation</a>
+          <a href="#impact" className="nav-link">Impact</a>
+          <a href="#ethics" className="nav-link">Ethics</a>
+        </nav>
+
+        <div className="nav-actions">
+          <a
+            href="https://jinox-v1.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mvp-primary-btn"
+            style={{ padding: "8px 18px", fontSize: "12px" }}
+            aria-label="Launch Live MVP at jinox-v1.vercel.app"
+          >
+            <span className="live-pulse-container">
+              <span className="live-pulse-ring"></span>
+              <span className="live-pulse-core"></span>
+            </span>
+            Launch Live MVP
+            <ExternalLink size={13} />
+          </a>
+        </div>
+      </header>
+
       {/* ====== COVER ====== */}
       <div className="cover">
         <div className="cover-noise"></div>
@@ -33,10 +124,50 @@ export default function App() {
           </div>
 
           <div className="cover-actions">
-            <a href="https://medium.com/@earunga/africa-has-3-5-billion-reasons-to-build-a-new-kind-of-ai-we-started-with-your-teeth-7cd3cff867e4" target="_blank" rel="noopener noreferrer" className="read-article-btn">
-              Read the Vision on Medium
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            {/* Primary MVP Button Link */}
+            <a
+              href="https://jinox-v1.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mvp-primary-btn"
+              title="Open JinoX Live Prototype on Vercel"
+            >
+              <span className="live-pulse-container">
+                <span className="live-pulse-ring"></span>
+                <span className="live-pulse-core"></span>
+              </span>
+              Launch Live MVP
+              <ExternalLink size={16} />
             </a>
+
+            <a
+              href="https://medium.com/@earunga/africa-has-3-5-billion-reasons-to-build-a-new-kind-of-ai-we-started-with-your-teeth-7cd3cff867e4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="read-article-btn"
+            >
+              Read the Vision on Medium
+              <ExternalLink size={15} />
+            </a>
+
+            <button
+              onClick={handleCopyLink}
+              className="share-copy-btn"
+              type="button"
+              aria-label="Share proposal URL"
+            >
+              {copied ? (
+                <>
+                  <Check size={14} className="text-white" />
+                  <span>Link Copied</span>
+                </>
+              ) : (
+                <>
+                  <Share2 size={14} />
+                  <span>Share Proposal</span>
+                </>
+              )}
+            </button>
           </div>
 
           <div className="cover-stat-row">
@@ -66,332 +197,461 @@ export default function App() {
       </div>
 
       {/* ====== DOCUMENT BODY ====== */}
-      <div className="doc">
+      <main className="doc">
 
         {/* ========== TABLE OF CONTENTS ========== */}
-        <div className="toc">
+        <nav className="toc" aria-label="Table of Contents">
           <h2>Table of Contents</h2>
           <ul className="toc-list">
             <li><a href="#executive-summary"><span className="toc-num">01</span> Executive Summary</a></li>
             <li><a href="#problem"><span className="toc-num">02</span> The Problem</a></li>
             <li><a href="#solution"><span className="toc-num">03</span> Solution Architecture</a></li>
+            <li><a href="#mvp"><span className="toc-num">★</span> Interactive Live MVP Prototype</a></li>
             <li><a href="#innovation"><span className="toc-num">04</span> Scientific &amp; Technical Innovation</a></li>
             <li><a href="#impact"><span className="toc-num">05</span> Expected Impact</a></li>
             <li><a href="#ethics"><span className="toc-num">06</span> Responsible AI &amp; Ethics Framework</a></li>
           </ul>
-        </div>
+        </nav>
 
         {/* ========== SECTION 1: EXECUTIVE SUMMARY ========== */}
-        <div className="section-label">
-          <span className="section-num">01</span>
-          <div className="section-rule"></div>
-        </div>
+        <section aria-labelledby="executive-summary">
+          <div className="section-label">
+            <span className="section-num">01</span>
+            <div className="section-rule"></div>
+          </div>
 
-        <h2 id="executive-summary">Executive Summary</h2>
+          <h2 id="executive-summary">Executive Summary</h2>
 
-        <p>
-          JinoX AI is an open, multimodal artificial intelligence platform designed to accelerate scientific discovery and measurably improve oral health outcomes, beginning in Kenya and scaling across Africa and the Global South.
-        </p>
+          <p>
+            JinoX AI is an open, multimodal artificial intelligence platform designed to accelerate scientific discovery and measurably improve oral health outcomes, beginning in Kenya and scaling across Africa and the Global South.
+          </p>
 
-        <div className="callout">
-          "Oral health is the most prevalent non-communicable disease domain on earth. It has no foundational AI model, no large-scale African dataset, and no integrated research infrastructure. JinoX builds all three."
-        </div>
+          <div className="callout">
+            "Oral health is the most prevalent non-communicable disease domain on earth. It has no foundational AI model, no large-scale African dataset, and no integrated research infrastructure. JinoX builds all three."
+          </div>
 
-        <p>
-          The platform integrates large-scale real-world multimodal datasets, foundational AI models trained on African clinical data, biological simulation via digital twins, and low-resource clinical deployment tools to form a self-improving scientific and clinical intelligence system.
-        </p>
+          <p>
+            The platform integrates large-scale real-world multimodal datasets, foundational AI models trained on African clinical data, biological simulation via digital twins, and low-resource clinical deployment tools to form a self-improving scientific and clinical intelligence system.
+          </p>
 
-        <p>
-          JinoX is positioned at the intersection of two of Google.org's priority domains: <strong>AI for Health &amp; Life Sciences</strong> (oral disease genomics, precision diagnostics, microbiome modeling) and <strong>AI for Climate Resilience</strong> (climate-fluoride-disease correlation intelligence). It is open-source by design, enabling downstream use by researchers worldwide.
-        </p>
+          <p>
+            JinoX is positioned at the intersection of two of Google.org's priority domains: <strong>AI for Health &amp; Life Sciences</strong> (oral disease genomics, precision diagnostics, microbiome modeling) and <strong>AI for Climate Resilience</strong> (climate-fluoride-disease correlation intelligence). It is open-source by design, enabling downstream use by researchers worldwide.
+          </p>
+        </section>
 
         {/* ========== SECTION 2: PROBLEM STATEMENT ========== */}
-        <div className="section-label">
-          <span className="section-num">02</span>
-          <div className="section-rule"></div>
-        </div>
-
-        <h2 id="problem">The Problem</h2>
-
-        <div className="problem-grid">
-          <div className="problem-cell">
-            <div className="problem-cell-title">Global Scale</div>
-            <div className="problem-stat">3.5B</div>
-            <div className="problem-desc">People affected by oral diseases, representing the most prevalent non-communicable disease cluster globally, yet remaining one of the least AI-resourced research domains.</div>
+        <section aria-labelledby="problem">
+          <div className="section-label">
+            <span className="section-num">02</span>
+            <div className="section-rule"></div>
           </div>
-          <div className="problem-cell">
-            <div className="problem-cell-title">Research Gap</div>
-            <div className="problem-stat">0</div>
-            <div className="problem-desc">Publicly available foundational AI models trained on African oral health data. Global models reflect Western patient demographics and clinical contexts.</div>
+
+          <h2 id="problem">The Problem</h2>
+
+          <div className="problem-grid">
+            <div className="problem-cell">
+              <div className="problem-cell-title">Global Scale</div>
+              <div className="problem-stat">3.5B</div>
+              <div className="problem-desc">People affected by oral diseases, representing the most prevalent non-communicable disease cluster globally, yet remaining one of the least AI-resourced research domains.</div>
+            </div>
+            <div className="problem-cell">
+              <div className="problem-cell-title">Research Gap</div>
+              <div className="problem-stat">0</div>
+              <div className="problem-desc">Publicly available foundational AI models trained on African oral health data. Global models reflect Western patient demographics and clinical contexts.</div>
+            </div>
+            <div className="problem-cell">
+              <div className="problem-cell-title">Kenya Dentist Ratio</div>
+              <div className="problem-stat">1:50k</div>
+              <div className="problem-desc">One dentist per 50,000 people in Kenya vs. 1:1,500 globally recommended. AI-powered diagnostic tools are not a convenience; they are a necessity.</div>
+            </div>
+            <div className="problem-cell">
+              <div className="problem-cell-title">Dataset Inequality</div>
+              <div className="problem-stat">&lt;2%</div>
+              <div className="problem-desc">Estimated proportion of global medical imaging datasets from Sub-Saharan Africa, creating systematic AI bias in any model applied to this population.</div>
+            </div>
           </div>
-          <div className="problem-cell">
-            <div className="problem-cell-title">Kenya Dentist Ratio</div>
-            <div className="problem-stat">1:50k</div>
-            <div className="problem-desc">One dentist per 50,000 people in Kenya vs. 1:1,500 globally recommended. AI-powered diagnostic tools are not a convenience; they are a necessity.</div>
-          </div>
-          <div className="problem-cell">
-            <div className="problem-cell-title">Dataset Inequality</div>
-            <div className="problem-stat">&lt;2%</div>
-            <div className="problem-desc">Estimated proportion of global medical imaging datasets from Sub-Saharan Africa, creating systematic AI bias in any model applied to this population.</div>
-          </div>
-        </div>
 
-        <h3>The Core Research Gap</h3>
+          <h3>The Core Research Gap</h3>
 
-        <p>
-          There is no unified, AI-powered infrastructure for oral health research, prediction, and clinical deployment, particularly in low-resource settings. Existing tools are fragmented, proprietary, Western-centric, and disconnected from environmental or genomic context. This is not a marginal problem: the consequences include delayed diagnoses, preventable tooth loss, oral cancer missed at early stages, and systemic underinvestment in a disease burden that disproportionately affects the poorest populations.
-        </p>
-
-        <p>
-          In Kenya specifically, fluorosis (from high-fluoride groundwater), advanced periodontitis driven by limited access to preventive care, and late-stage oral cancer detection represent three evidence-based, addressable scientific problems where AI-driven research could generate both new biological insights and clinical tools with immediate population impact.
-        </p>
-
-        {/* ========== KENYA CONTEXT ========== */}
-        <div className="kenya-box">
-          <div className="kenya-box-label">Kenya Context: Why Here, Why Now</div>
-          <div className="kenya-box-title">The ideal proving ground for Africa-first AI science</div>
           <p>
-            Kenya hosts a robust digital health infrastructure (M-Pesa interoperability, SHA/SHIF digitization, active telemedicine ecosystem), a growing cadre of clinical AI researchers at institutions including the University of Nairobi, Kenyatta National Hospital, and Aga Khan University Hospital, and an oral health burden that spans all three of Google.org's scientific interest areas: genomics (genetic susceptibility to caries and fluorosis), climate (fluoride-water-diet nexus), and life sciences (oral microbiome dynamics in Sub-Saharan populations).
+            There is no unified, AI-powered infrastructure for oral health research, prediction, and clinical deployment, particularly in low-resource settings. Existing tools are fragmented, proprietary, Western-centric, and disconnected from environmental or genomic context. This is not a marginal problem: the consequences include delayed diagnoses, preventable tooth loss, oral cancer missed at early stages, and systemic underinvestment in a disease burden that disproportionately affects the poorest populations.
           </p>
+
           <p>
-            JinoX will anchor its initial dataset collection and clinical deployment network in Kenya before expanding to East Africa and the broader continent to create an open infrastructure that future researchers can build upon.
+            In Kenya specifically, fluorosis (from high-fluoride groundwater), advanced periodontitis driven by limited access to preventive care, and late-stage oral cancer detection represent three evidence-based, addressable scientific problems where AI-driven research could generate both new biological insights and clinical tools with immediate population impact.
           </p>
-          <div className="kenya-facts">
-            <div>
-              <div className="kenya-fact-num">54M</div>
-              <div className="kenya-fact-label">Kenya population: large, diverse, and understudied</div>
-            </div>
-            <div>
-              <div className="kenya-fact-num">47</div>
-              <div className="kenya-fact-label">Counties: geographic and environmental diversity for dataset breadth</div>
-            </div>
-            <div>
-              <div className="kenya-fact-num">High</div>
-              <div className="kenya-fact-label">Endemic fluorosis risk in Rift Valley, presenting a unique research signal</div>
+
+          {/* ========== KENYA CONTEXT ========== */}
+          <div className="kenya-box">
+            <div className="kenya-box-label">Kenya Context: Why Here, Why Now</div>
+            <div className="kenya-box-title">The ideal proving ground for Africa-first AI science</div>
+            <p>
+              Kenya hosts a robust digital health infrastructure (M-Pesa interoperability, SHA/SHIF digitization, active telemedicine ecosystem), a growing cadre of clinical AI researchers at institutions including the University of Nairobi, Kenyatta National Hospital, and Aga Khan University Hospital, and an oral health burden that spans all three of Google.org's scientific interest areas: genomics (genetic susceptibility to caries and fluorosis), climate (fluoride-water-diet nexus), and life sciences (oral microbiome dynamics in Sub-Saharan populations).
+            </p>
+            <p>
+              JinoX will anchor its initial dataset collection and clinical deployment network in Kenya before expanding to East Africa and the broader continent to create an open infrastructure that future researchers can build upon.
+            </p>
+            <div className="kenya-facts">
+              <div>
+                <div className="kenya-fact-num">54M</div>
+                <div className="kenya-fact-label">Kenya population: large, diverse, and understudied</div>
+              </div>
+              <div>
+                <div className="kenya-fact-num">47</div>
+                <div className="kenya-fact-label">Counties: geographic and environmental diversity for dataset breadth</div>
+              </div>
+              <div>
+                <div className="kenya-fact-num">High</div>
+                <div className="kenya-fact-label">Endemic fluorosis risk in Rift Valley, presenting a unique research signal</div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* ========== SECTION 3: SOLUTION ========== */}
-        <div className="section-label">
-          <span className="section-num">03</span>
-          <div className="section-rule"></div>
-        </div>
+        <section aria-labelledby="solution">
+          <div className="section-label">
+            <span className="section-num">03</span>
+            <div className="section-rule"></div>
+          </div>
 
-        <h2 id="solution">Solution Architecture: Six Integrated Layers</h2>
+          <h2 id="solution">Solution Architecture: Six Integrated Layers</h2>
 
-        <p>
-          JinoX AI is not a single model or application. It is a <strong>self-improving scientific system</strong> composed of six interdependent layers, where each generates outputs that feed the next, creating compounding scientific value over time.
-        </p>
-
-        <div className="layers">
-          <div className="layer-card" data-num="1">
-            <div className="layer-title">Pan-African Multimodal Dataset</div>
-            <p className="layer-desc">Dental X-rays, intraoral images, clinical records, environmental data (fluoride, water quality, climate zone), and genomic markers collected across Kenyan counties and partner African institutions.</p>
-            <div className="layer-outcome">→ Largest open oral health dataset in the Global South</div>
-          </div>
-          <div className="layer-card" data-num="2">
-            <div className="layer-title">Foundational AI Model</div>
-            <p className="layer-desc">A multimodal foundation model trained simultaneously on imaging, structured clinical data, environmental signals, and genetic markers, representing the first of its kind for oral health.</p>
-            <div className="layer-outcome">→ Diagnosis · Risk prediction · Treatment recommendation</div>
-          </div>
-          <div className="layer-card" data-num="3">
-            <div className="layer-title">Digital Twin Simulation Engine</div>
-            <p className="layer-desc">Virtual models of oral cavity biology: tooth structure, gingival tissue, oral microbiome, and biochemical environment. Enables disease progression modeling and treatment simulation without patient risk.</p>
-            <div className="layer-outcome">→ Hypothesis testing · Pre-clinical simulation</div>
-          </div>
-          <div className="layer-card" data-num="4">
-            <div className="layer-title">Genetic Risk Prediction</div>
-            <p className="layer-desc">AI-driven genomic analysis to identify susceptibility variants for dental caries, periodontal disease, fluorosis, and developmental anomalies to drive personalized prevention in Kenya's diverse ethnic populations.</p>
-            <div className="layer-outcome">→ Precision oral health for African genomes</div>
-          </div>
-          <div className="layer-card" data-num="5">
-            <div className="layer-title">Low-Resource AI Diagnostics</div>
-            <p className="layer-desc">On-device and low-bandwidth diagnostic tools deployable via smartphone cameras, designed for Community Health Promoters (CHPs), rural dispensaries, and mission hospitals across Kenya's 47 counties.</p>
-            <div className="layer-outcome">→ Reaches the last mile of oral health access</div>
-          </div>
-          <div className="layer-card" data-num="6">
-            <div className="layer-title">Climate-Health Intelligence</div>
-            <p className="layer-desc">Integration of water quality (fluoride concentration), climate pattern data, and agricultural land use to model regional oral disease risk, connecting environmental science to clinical predictions at the county level.</p>
-            <div className="layer-outcome">→ Predictive disease mapping for public health planning</div>
-          </div>
-        </div>
-
-        {/* ========== FLYWHEEL ========== */}
-        <div className="flywheel">
-          <div className="flywheel-title">The JinoX Self-Improving Flywheel</div>
-          <div className="flywheel-steps">
-            <div className="flywheel-step">
-              <div className="flywheel-node highlight">Real-World Data</div>
-              <div className="flywheel-arrow">→</div>
-            </div>
-            <div className="flywheel-step">
-              <div className="flywheel-node">AI Model Training</div>
-              <div className="flywheel-arrow">→</div>
-            </div>
-            <div className="flywheel-step">
-              <div className="flywheel-node">Simulation &amp; Discovery</div>
-              <div className="flywheel-arrow">→</div>
-            </div>
-            <div className="flywheel-step">
-              <div className="flywheel-node">Validated Predictions</div>
-              <div className="flywheel-arrow">→</div>
-            </div>
-            <div className="flywheel-step">
-              <div className="flywheel-node">Clinical Deployment</div>
-              <div className="flywheel-arrow">→</div>
-            </div>
-            <div className="flywheel-step">
-              <div className="flywheel-node highlight">New Data</div>
-            </div>
-          </div>
-          <p className="flywheel-desc">
-            Each deployment generates new annotated clinical data. That data retrains the model. The simulation engine becomes more accurate. Predictions improve. This is a compounding scientific asset rather than a one-time project.
+          <p>
+            JinoX AI is not a single model or application. It is a <strong>self-improving scientific system</strong> composed of six interdependent layers, where each generates outputs that feed the next, creating compounding scientific value over time.
           </p>
-        </div>
+
+          <div className="layers">
+            <div className="layer-card" data-num="1">
+              <div className="layer-title">Pan-African Multimodal Dataset</div>
+              <p className="layer-desc">Dental X-rays, intraoral images, clinical records, environmental data (fluoride, water quality, climate zone), and genomic markers collected across Kenyan counties and partner African institutions.</p>
+              <div className="layer-outcome">→ Largest open oral health dataset in the Global South</div>
+            </div>
+            <div className="layer-card" data-num="2">
+              <div className="layer-title">Foundational AI Model</div>
+              <p className="layer-desc">A multimodal foundation model trained simultaneously on imaging, structured clinical data, environmental signals, and genetic markers, representing the first of its kind for oral health.</p>
+              <div className="layer-outcome">→ Diagnosis · Risk prediction · Treatment recommendation</div>
+            </div>
+            <div className="layer-card" data-num="3">
+              <div className="layer-title">Digital Twin Simulation Engine</div>
+              <p className="layer-desc">Virtual models of oral cavity biology: tooth structure, gingival tissue, oral microbiome, and biochemical environment. Enables disease progression modeling and treatment simulation without patient risk.</p>
+              <div className="layer-outcome">→ Hypothesis testing · Pre-clinical simulation</div>
+            </div>
+            <div className="layer-card" data-num="4">
+              <div className="layer-title">Genetic Risk Prediction</div>
+              <p className="layer-desc">AI-driven genomic analysis to identify susceptibility variants for dental caries, periodontal disease, fluorosis, and developmental anomalies to drive personalized prevention in Kenya's diverse ethnic populations.</p>
+              <div className="layer-outcome">→ Precision oral health for African genomes</div>
+            </div>
+            <div className="layer-card" data-num="5">
+              <div className="layer-title">Low-Resource AI Diagnostics</div>
+              <p className="layer-desc">On-device and low-bandwidth diagnostic tools deployable via smartphone cameras, designed for Community Health Promoters (CHPs), rural dispensaries, and mission hospitals across Kenya's 47 counties.</p>
+              <div className="layer-outcome">→ Reaches the last mile of oral health access</div>
+            </div>
+            <div className="layer-card" data-num="6">
+              <div className="layer-title">Climate-Health Intelligence</div>
+              <p className="layer-desc">Integration of water quality (fluoride concentration), climate pattern data, and agricultural land use to model regional oral disease risk, connecting environmental science to clinical predictions at the county level.</p>
+              <div className="layer-outcome">→ Predictive disease mapping for public health planning</div>
+            </div>
+          </div>
+
+          {/* ========== FLYWHEEL ========== */}
+          <div className="flywheel">
+            <div className="flywheel-title">The JinoX Self-Improving Flywheel</div>
+            <div className="flywheel-steps">
+              <div className="flywheel-step">
+                <div className="flywheel-node highlight">Real-World Data</div>
+                <div className="flywheel-arrow">→</div>
+              </div>
+              <div className="flywheel-step">
+                <div className="flywheel-node">AI Model Training</div>
+                <div className="flywheel-arrow">→</div>
+              </div>
+              <div className="flywheel-step">
+                <div className="flywheel-node">Simulation &amp; Discovery</div>
+                <div className="flywheel-arrow">→</div>
+              </div>
+              <div className="flywheel-step">
+                <div className="flywheel-node">Validated Predictions</div>
+                <div className="flywheel-arrow">→</div>
+              </div>
+              <div className="flywheel-step">
+                <div className="flywheel-node">Clinical Deployment</div>
+                <div className="flywheel-arrow">→</div>
+              </div>
+              <div className="flywheel-step">
+                <div className="flywheel-node highlight">New Data</div>
+              </div>
+            </div>
+            <p className="flywheel-desc">
+              Each deployment generates new annotated clinical data. That data retrains the model. The simulation engine becomes more accurate. Predictions improve. This is a compounding scientific asset rather than a one-time project.
+            </p>
+          </div>
+        </section>
+
+        {/* ========== MVP SPOTLIGHT SECTION ========== */}
+        <section id="mvp" aria-labelledby="mvp-heading">
+          <div className="mvp-spotlight">
+            <div className="mvp-spotlight-top">
+              <div className="mvp-badge">
+                <Sparkles size={12} />
+                Live Prototype Available
+              </div>
+              <span className="mvp-url-label">jinox-v1.vercel.app</span>
+            </div>
+
+            <h3 id="mvp-heading" className="mvp-spotlight-title">
+              Experience the Active JinoX v1 Clinical Prototype
+            </h3>
+
+            <p className="mvp-spotlight-desc">
+              We have built an operational, low-latency web application prototype demonstrating the core diagnostic workflow: smartphone photo intake, real-time tooth and gingival lesion segmentation, county-level environmental risk correlation, and triage classification for community healthcare workers.
+            </p>
+
+            <div className="mvp-feature-grid">
+              <div className="mvp-feature-card">
+                <div className="mvp-feature-title">
+                  <Smartphone size={14} className="text-white" />
+                  Mobile-Optimized Capture
+                </div>
+                <p className="mvp-feature-desc">
+                  Calibrated for low-cost Android cameras operated by Community Health Promoters (CHPs) with offline fallback.
+                </p>
+              </div>
+
+              <div className="mvp-feature-card">
+                <div className="mvp-feature-title">
+                  <Database size={14} className="text-white" />
+                  Environmental Integration
+                </div>
+                <p className="mvp-feature-desc">
+                  Incorporates groundwater fluoride indicators across Kenyan rift counties (Nakuru, Baringo, Kiambu).
+                </p>
+              </div>
+
+              <div className="mvp-feature-card">
+                <div className="mvp-feature-title">
+                  <ShieldCheck size={14} className="text-white" />
+                  Clinical Decision Support
+                </div>
+                <p className="mvp-feature-desc">
+                  Generates assistive confidence probabilities adhering to KMPDC clinical oversight guidelines.
+                </p>
+              </div>
+            </div>
+
+            <div className="mvp-spotlight-actions">
+              <a
+                href="https://jinox-v1.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mvp-primary-btn"
+              >
+                <span className="live-pulse-container">
+                  <span className="live-pulse-ring"></span>
+                  <span className="live-pulse-core"></span>
+                </span>
+                Launch Live MVP (v1)
+                <ExternalLink size={16} />
+              </a>
+
+              <a
+                href="https://medium.com/@earunga/africa-has-3-5-billion-reasons-to-build-a-new-kind-of-ai-we-started-with-your-teeth-7cd3cff867e4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="read-article-btn"
+              >
+                Read Background Article
+                <ExternalLink size={14} />
+              </a>
+            </div>
+          </div>
+        </section>
 
         {/* ========== SECTION 4: SCIENTIFIC INNOVATION ========== */}
-        <div className="section-label">
-          <span className="section-num">04</span>
-          <div className="section-rule"></div>
-        </div>
+        <section aria-labelledby="innovation">
+          <div className="section-label">
+            <span className="section-num">04</span>
+            <div className="section-rule"></div>
+          </div>
 
-        <h2 id="innovation">Scientific &amp; Technical Innovation</h2>
+          <h2 id="innovation">Scientific &amp; Technical Innovation</h2>
 
-        <h3>AI Innovation</h3>
-        <p>
-          JinoX will train the world's first multimodal foundation model for oral health. This model will simultaneously process radiographic imaging, structured clinical data, genomic sequences, and environmental signals. Existing oral health AI models are narrow, single-modality, and trained almost entirely on Western clinical datasets. JinoX will be trained on African patient data from the start, making it the only model that reflects the biological and environmental context of the continent's 1.4 billion people.
-        </p>
+          <h3>AI Innovation</h3>
+          <p>
+            JinoX will train the world's first multimodal foundation model for oral health. This model will simultaneously process radiographic imaging, structured clinical data, genomic sequences, and environmental signals. Existing oral health AI models are narrow, single-modality, and trained almost entirely on Western clinical datasets. JinoX will be trained on African patient data from the start, making it the only model that reflects the biological and environmental context of the continent's 1.4 billion people.
+          </p>
 
-        <h3>Biological Science</h3>
-        <p>
-          The digital twin simulation engine will create, for the first time, a computationally tractable virtual model of the oral cavity as a biological system, integrating tooth morphology, periodontal dynamics, salivary chemistry, and microbiome composition. This enables in-silico hypothesis testing that would otherwise require expensive or infeasible longitudinal clinical studies. Novel hypotheses about fluorosis pathways, caries progression under high-starch diets (prevalent in Kenya), and the role of the oral microbiome in systemic disease can be tested computationally before clinical validation.
-        </p>
+          <h3>Biological Science</h3>
+          <p>
+            The digital twin simulation engine will create, for the first time, a computationally tractable virtual model of the oral cavity as a biological system, integrating tooth morphology, periodontal dynamics, salivary chemistry, and microbiome composition. This enables in-silico hypothesis testing that would otherwise require expensive or infeasible longitudinal clinical studies. Novel hypotheses about fluorosis pathways, caries progression under high-starch diets (prevalent in Kenya), and the role of the oral microbiome in systemic disease can be tested computationally before clinical validation.
+          </p>
 
-        <h3>Data Science &amp; Environmental Health</h3>
-        <p>
-          The integration of fluoride concentration data (drawn from Kenya's hydrogeological surveys and WRMA water quality reports), climate zone data, and oral disease outcomes is a methodologically novel research direction. No existing study has attempted to build a predictive AI model connecting environmental variables to oral disease outcomes at sub-county resolution across Sub-Saharan Africa. JinoX will produce this as an open dataset and a publishable scientific contribution.
-        </p>
+          <h3>Data Science &amp; Environmental Health</h3>
+          <p>
+            The integration of fluoride concentration data (drawn from Kenya's hydrogeological surveys and WRMA water quality reports), climate zone data, and oral disease outcomes is a methodologically novel research direction. No existing study has attempted to build a predictive AI model connecting environmental variables to oral disease outcomes at sub-county resolution across Sub-Saharan Africa. JinoX will produce this as an open dataset and a publishable scientific contribution.
+          </p>
 
-        <div className="callout callout-green">
-          "JinoX does not apply existing AI to oral health. It builds the scientific infrastructure (such as the datasets, models, and simulation tools) that the field currently lacks entirely."
-        </div>
+          <div className="callout callout-green">
+            "JinoX does not apply existing AI to oral health. It builds the scientific infrastructure (such as the datasets, models, and simulation tools) that the field currently lacks entirely."
+          </div>
+        </section>
 
         {/* ========== SECTION 5: IMPACT ========== */}
-        <div className="section-label">
-          <span className="section-num">05</span>
-          <div className="section-rule"></div>
-        </div>
+        <section aria-labelledby="impact">
+          <div className="section-label">
+            <span className="section-num">05</span>
+            <div className="section-rule"></div>
+          </div>
 
-        <h2 id="impact">Expected Impact</h2>
+          <h2 id="impact">Expected Impact</h2>
 
-        <div className="metrics-wrapper">
-          <table className="metrics">
-          <thead>
-            <tr>
-              <th>Domain</th>
-              <th>Impact Area</th>
-              <th>18-Month Target</th>
-              <th>Category</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Dataset</td>
-              <td>Annotated patient records, images, genomic + environmental data</td>
-              <td className="metric-target">50,000+ records</td>
-              <td className="metric-cat">Data Science</td>
-            </tr>
-            <tr>
-              <td>AI Accuracy</td>
-              <td>Diagnostic accuracy on internal validation set</td>
-              <td className="metric-target">&gt;85% AUC</td>
-              <td className="metric-cat">AI Science</td>
-            </tr>
-            <tr>
-              <td>Publications</td>
-              <td>Peer-reviewed scientific outputs from JinoX research</td>
-              <td className="metric-target">6–10 papers</td>
-              <td className="metric-cat">Science Output</td>
-            </tr>
-            <tr>
-              <td>Clinical Deployment</td>
-              <td>Kenyan facilities using JinoX diagnostic tools</td>
-              <td className="metric-target">50+ facilities</td>
-              <td className="metric-cat">Health Equity</td>
-            </tr>
-            <tr>
-              <td>Patient Reach</td>
-              <td>Patients screened using AI-assisted tools</td>
-              <td className="metric-target">100,000+</td>
-              <td className="metric-cat">Clinical Impact</td>
-            </tr>
-            <tr>
-              <td>Open Access</td>
-              <td>Researchers accessing open JinoX dataset + model via API</td>
-              <td className="metric-target">200+ institutions</td>
-              <td className="metric-cat">Scientific Commons</td>
-            </tr>
-            <tr>
-              <td>Environmental</td>
-              <td>Counties with fluorosis-climate risk maps generated</td>
-              <td className="metric-target">20+ counties</td>
-              <td className="metric-cat">Climate-Health</td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
+          <div className="metrics-wrapper">
+            <table className="metrics">
+              <thead>
+                <tr>
+                  <th>Domain</th>
+                  <th>Impact Area</th>
+                  <th>18-Month Target</th>
+                  <th>Category</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Dataset</td>
+                  <td>Annotated patient records, images, genomic + environmental data</td>
+                  <td className="metric-target">50,000+ records</td>
+                  <td className="metric-cat">Data Science</td>
+                </tr>
+                <tr>
+                  <td>AI Accuracy</td>
+                  <td>Diagnostic accuracy on internal validation set</td>
+                  <td className="metric-target">&gt;85% AUC</td>
+                  <td className="metric-cat">AI Science</td>
+                </tr>
+                <tr>
+                  <td>Publications</td>
+                  <td>Peer-reviewed scientific outputs from JinoX research</td>
+                  <td className="metric-target">6–10 papers</td>
+                  <td className="metric-cat">Science Output</td>
+                </tr>
+                <tr>
+                  <td>Clinical Deployment</td>
+                  <td>Kenyan facilities using JinoX diagnostic tools</td>
+                  <td className="metric-target">50+ facilities</td>
+                  <td className="metric-cat">Health Equity</td>
+                </tr>
+                <tr>
+                  <td>Patient Reach</td>
+                  <td>Patients screened using AI-assisted tools</td>
+                  <td className="metric-target">100,000+</td>
+                  <td className="metric-cat">Clinical Impact</td>
+                </tr>
+                <tr>
+                  <td>Open Access</td>
+                  <td>Researchers accessing open JinoX dataset + model via API</td>
+                  <td className="metric-target">200+ institutions</td>
+                  <td className="metric-cat">Scientific Commons</td>
+                </tr>
+                <tr>
+                  <td>Environmental</td>
+                  <td>Counties with fluorosis-climate risk maps generated</td>
+                  <td className="metric-target">20+ counties</td>
+                  <td className="metric-cat">Climate-Health</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
         {/* ========== SECTION 6: RESPONSIBLE AI ========== */}
-        <div className="section-label">
-          <span className="section-num">06</span>
-          <div className="section-rule"></div>
-        </div>
-
-        <h2 id="ethics">Responsible AI &amp; Ethics Framework</h2>
-
-        <h3>Data Ethics</h3>
-        <p>
-          All data collection will operate under Kenya Medical Research Institute (KEMRI) ethical approval and institutional IRB clearance. Patient consent is informed, opt-in, and multilingual (Swahili, English, relevant county languages). Data is pseudonymised at point of collection with strict access control tiers.
-        </p>
-
-        <h3>Bias Mitigation</h3>
-        <p>
-          Dataset collection is stratified by county, age group, gender, and socioeconomic proxy to ensure representativeness across Kenya's demographic diversity. Model evaluation will include disaggregated performance metrics across these strata. No model will be deployed clinically until performance benchmarks are met across all demographic subgroups.
-        </p>
-
-        <h3>Clinical Oversight</h3>
-        <p>
-          JinoX diagnostic tools are designed as clinical decision support instruments rather than autonomous diagnostic systems. Every AI output is presented as a probability score for clinician review. The system is designed in compliance with Kenya Medical Practitioners and Dentists Council (KMPDC) regulatory requirements.
-        </p>
-
-        <h3>Open Access</h3>
-        <p>
-          All models, code, and de-identified datasets will be released under open licenses. Scientific outputs will be submitted to open-access journals. The Research API will be free for academic and non-commercial use globally to maximise the scientific commons value of the grant.
-        </p>
-
-        {/* ========== VISION ========== */}
-        <div className="vision">
-          <div className="vision-eyebrow">Long-Term Vision</div>
-          <div className="vision-title">
-            "JinoX AI becomes the global intelligence layer for oral and craniofacial science: built in Africa, open to the world."
+        <section aria-labelledby="ethics">
+          <div className="section-label">
+            <span className="section-num">06</span>
+            <div className="section-rule"></div>
           </div>
-          <p className="vision-subtitle">
-            Future expansions include regenerative dentistry simulation, biomaterials discovery, integration with Kenya's broader digital health stack (SHA/SHIF), and cross-disciplinary linkage with microbiome and systemic disease research, positioning oral health as a window into whole-body health intelligence.
-          </p>
-        </div>
 
-      </div>
+          <h2 id="ethics">Responsible AI &amp; Ethics Framework</h2>
+
+          <h3>Data Ethics</h3>
+          <p>
+            All data collection will operate under Kenya Medical Research Institute (KEMRI) ethical approval and institutional IRB clearance. Patient consent is informed, opt-in, and multilingual (Swahili, English, relevant county languages). Data is pseudonymised at point of collection with strict access control tiers.
+          </p>
+
+          <h3>Bias Mitigation</h3>
+          <p>
+            Dataset collection is stratified by county, age group, gender, and socioeconomic proxy to ensure representativeness across Kenya's demographic diversity. Model evaluation will include disaggregated performance metrics across these strata. No model will be deployed clinically until performance benchmarks are met across all demographic subgroups.
+          </p>
+
+          <h3>Clinical Oversight</h3>
+          <p>
+            JinoX diagnostic tools are designed as clinical decision support instruments rather than autonomous diagnostic systems. Every AI output is presented as a probability score for clinician review. The system is designed in compliance with Kenya Medical Practitioners and Dentists Council (KMPDC) regulatory requirements.
+          </p>
+
+          <h3>Open Access</h3>
+          <p>
+            All models, code, and de-identified datasets will be released under open licenses. Scientific outputs will be submitted to open-access journals. The Research API will be free for academic and non-commercial use globally to maximise the scientific commons value of the grant.
+          </p>
+
+          {/* ========== VISION ========== */}
+          <div className="vision">
+            <div className="vision-eyebrow">Long-Term Vision</div>
+            <div className="vision-title">
+              "JinoX AI becomes the global intelligence layer for oral and craniofacial science: built in Africa, open to the world."
+            </div>
+            <p className="vision-subtitle">
+              Future expansions include regenerative dentistry simulation, biomaterials discovery, integration with Kenya's broader digital health stack (SHA/SHIF), and cross-disciplinary linkage with microbiome and systemic disease research, positioning oral health as a window into whole-body health intelligence.
+            </p>
+          </div>
+        </section>
+
+      </main>
 
       {/* ====== FOOTER ====== */}
-      <div className="footer">
-        <div className="footer-brand">JinoX AI</div>
+      <footer className="footer" role="contentinfo">
+        <div>
+          <div className="footer-brand">
+            JinoX AI
+          </div>
+          <div className="footer-actions">
+            <a
+              href="https://jinox-v1.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              <Globe size={13} className="text-white" />
+              Live MVP App (jinox-v1.vercel.app)
+              <ExternalLink size={11} />
+            </a>
+            <span style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
+            <a
+              href="https://medium.com/@earunga/africa-has-3-5-billion-reasons-to-build-a-new-kind-of-ai-we-started-with-your-teeth-7cd3cff867e4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              Medium Vision Article
+              <ExternalLink size={11} />
+            </a>
+          </div>
+        </div>
+
         <div className="footer-meta">
           Google.org Impact Challenge: AI for Science<br />
           AI for Health &amp; Life Sciences · AI for Climate Resilience<br />
           Kenya · Open-Source · 2026
         </div>
-      </div>
+      </footer>
+
+      {/* ====== BACK TO TOP BUTTON ====== */}
+      <button
+        onClick={scrollToTop}
+        className={`back-to-top-btn ${showStickyNav ? "visible" : ""}`}
+        aria-label="Back to top"
+        type="button"
+      >
+        <ChevronUp size={20} />
+      </button>
     </>
   );
 }

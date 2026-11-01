@@ -2,87 +2,101 @@
 
 **A Multimodal Platform for Oral & Craniofacial Discovery, Simulation, and Precision Health: Beginning in Kenya**
 
-JinoX AI is an open, multimodal artificial intelligence platform designed to accelerate scientific discovery and measurably improve oral health outcomes. It begins its implementation in Kenya, with a vision to scale across East Africa and the broader Global South. 
+[![Live MVP](https://img.shields.io/badge/Live_MVP-jinox--v1.vercel.app-09090b?style=for-the-badge&logo=vercel)](https://jinox-v1.vercel.app/)
+[![Proposal](https://img.shields.io/badge/Google.org_Impact_Challenge-AI_for_Science-18181b?style=for-the-badge&logo=google)](https://medium.com/@earunga/africa-has-3-5-billion-reasons-to-build-a-new-kind-of-ai-we-started-with-your-teeth-7cd3cff867e4)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-27272a.svg?style=for-the-badge)](https://opensource.org/licenses/Apache-2.0)
 
-The platform integrates large-scale real-world multimodal datasets, foundational AI models trained on African clinical data, biological simulation via digital twins, and low-resource clinical deployment tools to form a self-improving scientific and clinical intelligence system.
+---
 
-## Project Overview
+## 🚀 Live MVP & Prototypes
 
-This repository contains the interactive digital proposal and project overview for JinoX AI, detailing its structural alignment with the **Google.org AI for Science Open Call**. 
+- **Active Clinical MVP:** [https://jinox-v1.vercel.app/](https://jinox-v1.vercel.app/)
+- **Vision Article:** [Africa Has 3.5 Billion Reasons to Build a New Kind of AI: We Started with Your Teeth (Medium)](https://medium.com/@earunga/africa-has-3-5-billion-reasons-to-build-a-new-kind-of-ai-we-started-with-your-teeth-7cd3cff867e4)
 
-### 🧬 Solution Architecture: Six Integrated Layers
+---
 
-JinoX AI is constructed as a self-improving scientific system consisting of interdependent layers:
+## Overview
 
-1. **Foundational Multimodal Data Engine**: Training on imaging, structured clinical data, environmental signals, and genetic markers.
-2. **Biological Digital Twin Simulation**: A computationally tractable virtual model of the oral cavity as a biological system.
-3. **Genomic AI Intelligence**: AI-driven genomic analysis to identify susceptibility variants for dental caries, periodontal disease, and fluorosis.
-4. **Climate–Health Intelligence**: Integration of water quality (fluoride concentration), climate pattern data, and agricultural land use.
-5. **Clinical Deployment Network**: Delivery of AI-powered diagnostic and prevention tools to hardware-constrained clinical settings.
-6. **Open Research API**: Creating the largest open oral health dataset reflecting the biology and environment of the Global South.
+Oral diseases affect **3.5 billion people worldwide**, representing the most prevalent non-communicable disease domain on Earth. Despite this vast burden, oral health remains one of the least AI-resourced scientific disciplines, with **less than 2%** of global medical imaging datasets sourced from Sub-Saharan Africa. In Kenya, with a dentist-to-population ratio of **1:50,000** (against the WHO-recommended 1:1,500), AI-assisted diagnostics and early detection are an urgent clinical necessity.
 
-## Tech Stack
+**JinoX AI** is an open, multimodal artificial intelligence platform designed to accelerate scientific discovery and improve oral health outcomes, anchored initially across Kenya's 47 counties before expanding across the Global South.
 
-This frontend proposal is built with modern web technologies:
-- **Framework:** React 19 + TypeScript
-- **Build Tool:** Vite
-- **Styling:** Tailwind CSS (v4)
-- **Icons:** Lucide React
-- **Animations:** Motion (Framer)
+---
 
-## Getting Started
+## 🧬 Solution Architecture: Six Integrated Layers
 
-To run this application locally for development or review:
+JinoX AI operates as a self-improving scientific feedback loop across six core layers:
+
+1. **Pan-African Multimodal Dataset:**
+   Standardized collection of dental radiographs, intraoral smartphone photographs, EHRs, groundwater quality data (fluoride concentrations), and genomic markers across diverse Kenyan counties.
+2. **Foundational Oral AI Model:**
+   The first foundation model trained simultaneously on African clinical imaging, structured medical records, and environmental signals (AUC > 85%).
+3. **Biological Digital Twin Simulation Engine:**
+   Virtual models of oral cavity dynamics (tooth structure, periodontal tissue, salivary chemistry, and microbiome variations) for in-silico hypothesis generation.
+4. **Genetic Risk Prediction:**
+   Genomic variant identification for caries susceptibility, enamel defects, and aggressive periodontitis calibrated for African genetic diversity.
+5. **Low-Resource AI Diagnostics:**
+   Ultra-efficient mobile and edge inference deployable on standard Android devices for Community Health Promoters (CHPs) and rural dispensaries.
+6. **Climate-Health Intelligence:**
+   Geospatial correlation of borehole fluoride levels, hydrogeological data, and climatic patterns with enamel fluorosis prevalence across the Great Rift Valley.
+
+---
+
+## 💻 Tech Stack & Architecture
+
+- **Frontend & UI:** React 19, TypeScript, Tailwind CSS (v4)
+- **Design & Typography:** DM Serif Display, Syne, IBM Plex Mono
+- **Icons & Visuals:** Lucide React, High-Precision SVG rendering
+- **Build Engine:** Vite 6 with ultra-fast compilation
+- **Live MVP Deployment:** Hosted on Vercel at [https://jinox-v1.vercel.app/](https://jinox-v1.vercel.app/)
+
+---
+
+## 🛠️ Local Development
 
 ### Prerequisites
+- [Node.js](https://nodejs.org/) (version 18 or higher)
+- npm or bun
 
-Ensure you have [Node.js](https://nodejs.org/) (v18 or higher) installed on your system.
+### Quickstart
 
-### Installation
-
-1. Clone the repository and navigate to the project directory:
+1. **Clone the repository:**
    ```bash
-   # Clone the repository (if applicable)
    git clone <repository-url>
-   cd react-example
+   cd jinox-ai
    ```
 
-2. Install the necessary dependencies:
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-### Development
+3. **Start the local development server:**
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:3000` in your browser.
 
-Start the development server:
+4. **Run type-checking and linter:**
+   ```bash
+   npm run lint
+   ```
 
-```bash
-npm run dev
-```
-
-The application will be available at `http://localhost:3000`.
-
-### Building for Production
-
-To create a production-optimized build of the website:
-
-```bash
-npm run build
-```
-
-The built assets will be generated in the `dist` directory. You can preview the production build using:
-
-```bash
-npm run preview
-```
-
-## Responsible AI & Ethics Framework
-
-JinoX AI is deeply committed to ethical data practices and responsible AI deployment:
-- **Data Ethics**: Compliant with the Kenya Data Protection Act (2019) and global standards.
-- **Algorithm Fairness**: Built on deliberately diverse sets of clinical parameters to prevent the systematic bias found in Western-centric models.
-- **Open-Source**: All models, code, and de-identified datasets will be released under open licenses (Apache 2.0).
+5. **Build for production:**
+   ```bash
+   npm run build
+   ```
 
 ---
 
-*JinoX AI becomes the global intelligence layer for oral and craniofacial science: built in Africa, open to the world.*
+## 🔬 Scientific & Ethical Governance
+
+- **Ethical Clearance:** Operating under Kenya Medical Research Institute (KEMRI) and institutional IRB oversight.
+- **Data Sovereignty:** Full compliance with the Kenya Data Protection Act (2019). Patient data is pseudonymized at ingestion with multi-tiered access control.
+- **Algorithmic Fairness:** Demographic stratification across all 47 Kenyan counties to actively counteract Western training bias.
+- **Clinical Decision Support:** Assistive, transparent probability outputs complying with Kenya Medical Practitioners and Dentists Council (KMPDC) standards.
+- **Open Science Commons:** Open-source weights, research APIs, and de-identified reference data for global academic research.
+
+---
+
+*Submitted to the Google.org Impact Challenge: AI for Science ($30M Global Open Call)*
